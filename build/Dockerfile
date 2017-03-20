@@ -38,9 +38,9 @@ RUN curl -sSL https://get.docker.com/builds/Linux/x86_64/docker-1.9.1 > /usr/bin
 WORKDIR /dashboard
 
 # Install all npm deps, bower deps. This will take a while.
-COPY package.json bower.json ./
-COPY build/postinstall.sh build/
+COPY ../package.json ../bower.json ./
+COPY ./postinstall.sh build/
 RUN npm install --unsafe-perm
 
 # Copy entire source tree.
-COPY ./ ./
+COPY ../ ./
